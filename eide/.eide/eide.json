@@ -1,0 +1,322 @@
+{
+  "name": "CTRL_Pf_Dev",
+  "type": "ARM",
+  "dependenceList": [],
+  "srcDirs": [
+    ".eide/deps"
+  ],
+  "virtualFolder": {
+    "name": "<virtual_root>",
+    "files": [],
+    "folders": [
+      {
+        "name": "Algorithm",
+        "files": [
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/User/Algorithm/ctrlAlgorithm.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "Common",
+        "files": [],
+        "folders": []
+      },
+      {
+        "name": "Controller",
+        "files": [
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/User/Controller/main.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "Library",
+        "files": [
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/CMSIS/Lib/arm_cortexM4lf_math.lib"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "Peripheral",
+        "files": [
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/DelayAdapter.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/ExtiAdapter.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/LedAdapter.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/SPIAdapter.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/TimAdapter.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/UartAdapter.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/FmcAdapter.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/CanAdapter.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/DACAdapter.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/ADCAdapter.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/UdpAdapter.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/GpioAdapter.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "Sensor",
+        "files": [],
+        "folders": []
+      },
+      {
+        "name": "StdDirver",
+        "files": [
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_dma.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/misc.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_exti.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_gpio.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_spi.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_tim.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_syscfg.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_rcc.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_usart.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_fmc.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_can.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_adc.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "SysConfig",
+        "files": [
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/System/system_stm32f4xx.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/System/startup_stm32f429_439xx.s"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "W5500",
+        "files": [
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/W5500/w5500.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/W5500/wizchip_conf.c"
+          }
+        ],
+        "folders": []
+      }
+    ]
+  },
+  "outDir": "build",
+  "deviceName": null,
+  "packDir": null,
+  "miscInfo": {
+    "uid": "5e30a719da696c6b9c0a4a1dd23f8ec3"
+  },
+  "targets": {
+    "STM32F429IIHx": {
+      "excludeList": [],
+      "toolchain": "AC5",
+      "compileConfig": {
+        "cpuType": "Cortex-M4",
+        "floatingPointHardware": "single",
+        "scatterFilePath": "",
+        "useCustomScatterFile": false,
+        "storageLayout": {
+          "RAM": [
+            {
+              "tag": "RAM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "RAM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "RAM",
+              "id": 3,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "IRAM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x20000000",
+                "size": "0x30000"
+              },
+              "isChecked": true,
+              "noInit": false
+            },
+            {
+              "tag": "IRAM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x10000000",
+                "size": "0x10000"
+              },
+              "isChecked": false,
+              "noInit": false
+            }
+          ],
+          "ROM": [
+            {
+              "tag": "ROM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "ROM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "ROM",
+              "id": 3,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "IROM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x8000000",
+                "size": "0x200000"
+              },
+              "isChecked": true,
+              "isStartup": true
+            },
+            {
+              "tag": "IROM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            }
+          ]
+        },
+        "options": "null"
+      },
+      "uploader": "JLink",
+      "uploadConfig": {
+        "bin": "",
+        "baseAddr": "",
+        "cpuInfo": {
+          "vendor": "null",
+          "cpuName": "null"
+        },
+        "proType": 1,
+        "speed": 8000,
+        "otherCmds": ""
+      },
+      "uploadConfigMap": {},
+      "custom_dep": {
+        "name": "default",
+        "incList": [
+          "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper",
+          "../test_PF_CTRL_DEV_20191213/Code/Driver/System",
+          "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/inc",
+          "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/CMSIS/Include",
+          "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/W5500",
+          "../test_PF_CTRL_DEV_20191213/Code/User/Algorithm",
+          ".cmsis/include",
+          "../test_PF_CTRL_DEV_20191213/RTE/_STM32F429IIHx",
+          ".eide/deps"
+        ],
+        "libList": [],
+        "sourceDirList": [],
+        "defineList": [
+          "USE_STDPERIPH_DRIVER",
+          "STM32F429_439xx",
+          "__FPU_PRESENT=1",
+          "__TARGET_FPU_VFP",
+          "ARM_MATH_CM4",
+          "__CC_ARM"
+        ]
+      }
+    }
+  },
+  "version": "3.3"
+}

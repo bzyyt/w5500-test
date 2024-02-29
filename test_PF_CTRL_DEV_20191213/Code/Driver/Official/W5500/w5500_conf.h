@@ -91,4 +91,5 @@ void timer2_isr(void);
 uint8 getPHYStatus( void );
 void PHY_check(void);
 void setKPALVTR(SOCKET i,uint8 val);
+void w5500Init(void);
 #endif //_w5500_CONF_H_

@@ -79,11 +79,15 @@ void Peripheral_Init(void)
     // Initialize GPIO
     Gpio_Init();
     //Initialize FMC(FPGA)
-    FMC_Init();   
+    FMC_Init();
+    // SPI3初始化 
+    Spi_Init(SPI_3);                 
     // Uart(FGPA)
     Uart_Init(FPGAUart1, 460800, DataBits_8, StopBits_1, ParityBits_None, 0, 0x01, 0x01);
     Uart_Init(FPGAUart2, 460800, DataBits_8, StopBits_1, ParityBits_None, 0, 0x01, 0x01);
     Uart_Init(FPGAUart3, 460800, DataBits_8, StopBits_1, ParityBits_None, 0, 0x01, 0x01);
+    //w5500初始化
+    w5500Init();
 }
 
 void RecvINSMsg(void)

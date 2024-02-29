@@ -15,8 +15,12 @@
 #include "ADCAdapter.h"
 #include "UdpAdapter.h"
 #include "GpioAdapter.h"
+#include "SPIAdapter.h"
 
 #include "ctrlAlgorithm.h"
+
+#include "tcp_server.h"
+#include "w5500_conf.h"
 
 #define MAIN_FREQUENCY 1000
 

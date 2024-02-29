@@ -121,26 +121,41 @@ void SPI3_Config()
     GPIO_Init(GPIOA,&GPIO_InitStructure);
     GPIO_SetBits(GPIOA, GPIO_Pin_4);
     
+    //TODO:如果我原理图没看错的话应该是这样的：
+    /* PA_10 -> SCLk | PA_9 -> MISO | PA_12 -> MOSI */
+    //暂时修改成上面这样
     //PB3--SCLK PB4--MISO PC12--MOSI 
+    /*老代码
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB,ENABLE);  
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC,ENABLE);  
+    */
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA,ENABLE);  
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI3,ENABLE); 
     
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;  
     GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
     GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
-        
+    
+    /*
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3 | GPIO_Pin_4;
     GPIO_Init(GPIOB,&GPIO_InitStructure);
     
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12;
     GPIO_Init(GPIOC,&GPIO_InitStructure);
-    
+    */
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_12;
+    GPIO_Init(GPIOA,&GPIO_InitStructure);
+
+    /*
     GPIO_PinAFConfig(GPIOB,GPIO_PinSource3,GPIO_AF_SPI3);  
     GPIO_PinAFConfig(GPIOB,GPIO_PinSource4,GPIO_AF_SPI3);
     GPIO_PinAFConfig(GPIOC,GPIO_PinSource12,GPIO_AF_SPI3);
-    
+    */
+    GPIO_PinAFConfig(GPIOA,GPIO_PinSource9,GPIO_AF_SPI3);  
+    GPIO_PinAFConfig(GPIOA,GPIO_PinSource10,GPIO_AF_SPI3);
+    GPIO_PinAFConfig(GPIOA,GPIO_PinSource12,GPIO_AF_SPI3);
+
     RCC_APB1PeriphResetCmd(RCC_APB1Periph_SPI3, ENABLE);
     RCC_APB1PeriphResetCmd(RCC_APB1Periph_SPI3, DISABLE);
     
@@ -150,7 +165,8 @@ void SPI3_Config()
     SPI_InitStructure.SPI_CPOL  = SPI_CPOL_High;
     SPI_InitStructure.SPI_CPHA = SPI_CPHA_2Edge;
     SPI_InitStructure.SPI_NSS = SPI_NSS_Soft;  
-    SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_2; // APB1 = 45MHz, 45/2 = 22.5M 
+    SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_4; // APB1 = 45MHz, 45/2 = 22.5M 
+    //上面的值一开始是2
     SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB;
     SPI_InitStructure.SPI_CRCPolynomial = 7;
     SPI_Init(SPI3,&SPI_InitStructure);

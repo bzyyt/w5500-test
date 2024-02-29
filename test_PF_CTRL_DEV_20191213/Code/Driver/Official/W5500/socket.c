@@ -191,7 +191,7 @@ uint16 send(SOCKET s, const uint8 * buf, uint16 len)
   // if freebuf is available, start.
   do
   {
-    freesize = getSn_TX_FSR(s);
+    freesize = getSn_TX_FSR1(s);
     status = IINCHIP_READ(Sn_SR(s));
     if ((status != SOCK_ESTABLISHED) && (status != SOCK_CLOSE_WAIT))
     {

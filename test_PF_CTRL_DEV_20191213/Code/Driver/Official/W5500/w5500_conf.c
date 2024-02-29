@@ -59,17 +59,19 @@ uint32 ms=0;                                                // 毫秒计数
 void reset_break_gpio_init(void)
 {
   GPIO_InitTypeDef GPIO_InitStructure;
-  // RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC,ENABLE);
-  __HAL_RCC_GPIOH_CLK_ENABLE(); // 开启GPIOH时钟
+  RCC_APB1PeriphClockCmd(RCC_AHB1Periph_GPIOH,ENABLE);  // 开启GPIOH时钟
+  // __HAL_RCC_GPIOH_CLK_ENABLE(); 
   /* PH_01 -> RST */
-  GPIO_InitStructure.Pin = GPIO_PIN_1;
-  GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
-  HAL_GPIO_Init(GPIOH, &GPIO_InitStructure);
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+  // TODO: 可能需要一个pupd，咱也不懂
+  GPIO_Init(GPIOH, &GPIO_InitStructure);
   /* PH_05 -> INT */
-  GPIO_InitStructure.Pin = GPIO_PIN_5;
-  GPIO_InitStructure.Mode = GPIO_MODE_INPUT;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStructure);
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+  GPIO_Init(GPIOH, &GPIO_InitStructure);
 }
 
 /**
@@ -145,12 +147,12 @@ void set_w5500_mac(void)
 */
 void reset_w5500(void)
 {
-  // GPIO_ResetBits(GPIOB, GPIO_Pin_1);
-  HAL_GPIO_WritePin(GPIOH,GPIO_PIN_1,GPIO_PIN_RESET);	//RST PH01置0
-  delay_ms(500);
-  // GPIO_SetBits(GPIOB, GPIO_Pin_1);
-  HAL_GPIO_WritePin(GPIOH,GPIO_PIN_1,GPIO_PIN_SET);	//RST PH01置1
-  delay_ms(1500);
+  GPIO_ResetBits(GPIOH, GPIO_Pin_1);
+  // HAL_GPIO_WritePin(GPIOH,GPIO_PIN_1,GPIO_PIN_RESET);	//RST PH01置0
+  Delay_ms(500);
+  GPIO_SetBits(GPIOH, GPIO_Pin_1);
+  // HAL_GPIO_WritePin(GPIOH,GPIO_PIN_1,GPIO_PIN_SET);	//RST PH01置1
+  Delay_ms(1500);
 }
 
 /**
@@ -160,7 +162,8 @@ void reset_w5500(void)
 */
 void iinchip_csoff(void)
 {
-	cs_low();
+	// cs_low();
+  Spi_CS(SPI_3,Bit_RESET);
 }
 
 /**
@@ -170,7 +173,8 @@ void iinchip_csoff(void)
 */
 void iinchip_cson(void)
 {	
-   cs_high();
+  //  cs_high();
+  Spi_CS(SPI_3,Bit_SET);
 }
 
 /**
@@ -180,7 +184,8 @@ void iinchip_cson(void)
 */
 uint8 IINCHIP_SpiSendData(uint8 dat)
 {
-	return(spi_read_send_byte(dat));
+	// return(spi_read_send_byte(dat));
+  return(Spi_ReadWriteData(SPI_3,dat));
 }
 
 /**
@@ -354,7 +359,7 @@ void PHY_check(void)
 		{
       PHY_connect=0x01&getPHYStatus();
       printf(" .");
-      delay_ms(500);
+      Delay_ms(500);
     }
     printf(" \r\n");
   }

@@ -257,7 +257,7 @@ uint8 getSn_SR(SOCKET s)
 *@param		s: socket number
 *@return  socket TX free buf size
 */
-uint16 getSn_TX_FSR(SOCKET s)
+uint16 getSn_TX_FSR1(SOCKET s)
 {
   uint16 val=0,val1=0;
   do
@@ -278,7 +278,7 @@ uint16 getSn_TX_FSR(SOCKET s)
 *@param		s: socket number
 *@return  socket TX free buf size
 */
-uint16 getSn_RX_RSR(SOCKET s)
+uint16 getSn_RX_RSR1(SOCKET s)
 {
   uint16 val=0,val1=0;
   do

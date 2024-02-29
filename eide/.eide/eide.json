@@ -45,10 +45,25 @@
         "name": "Peripheral",
         "files": [
           {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/ADCAdapter.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/CanAdapter.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/DACAdapter.c"
+          },
+          {
             "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/DelayAdapter.c"
           },
           {
             "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/ExtiAdapter.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/FmcAdapter.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/GpioAdapter.c"
           },
           {
             "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/LedAdapter.c"
@@ -63,22 +78,7 @@
             "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/UartAdapter.c"
           },
           {
-            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/FmcAdapter.c"
-          },
-          {
-            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/CanAdapter.c"
-          },
-          {
-            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/DACAdapter.c"
-          },
-          {
-            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/ADCAdapter.c"
-          },
-          {
             "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/UdpAdapter.c"
-          },
-          {
-            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Helper/GpioAdapter.c"
           }
         ],
         "folders": []
@@ -92,40 +92,40 @@
         "name": "StdDirver",
         "files": [
           {
-            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_dma.c"
-          },
-          {
             "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/misc.c"
           },
           {
-            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_exti.c"
-          },
-          {
-            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_gpio.c"
-          },
-          {
-            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_spi.c"
-          },
-          {
-            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_tim.c"
-          },
-          {
-            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_syscfg.c"
-          },
-          {
-            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_rcc.c"
-          },
-          {
-            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_usart.c"
-          },
-          {
-            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_fmc.c"
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_adc.c"
           },
           {
             "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_can.c"
           },
           {
-            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_adc.c"
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_dma.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_exti.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_fmc.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_gpio.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_rcc.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_spi.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_syscfg.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_tim.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/STM32F4xx_StdPeriph_Driver_V1.8.0/src/stm32f4xx_usart.c"
           }
         ],
         "folders": []
@@ -134,10 +134,10 @@
         "name": "SysConfig",
         "files": [
           {
-            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/System/system_stm32f4xx.c"
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/System/startup_stm32f429_439xx.s"
           },
           {
-            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/System/startup_stm32f429_439xx.s"
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/System/system_stm32f4xx.c"
           }
         ],
         "folders": []
@@ -145,6 +145,18 @@
       {
         "name": "W5500",
         "files": [
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/W5500/socket.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/W5500/utility.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/W5500/w5500_conf.c"
+          },
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/W5500/w5500_control.c"
+          },
           {
             "path": "../test_PF_CTRL_DEV_20191213/Code/Driver/Official/W5500/w5500.c"
           },
@@ -164,7 +176,10 @@
   },
   "targets": {
     "STM32F429IIHx": {
-      "excludeList": [],
+      "excludeList": [
+        "<virtual_root>/W5500/bsp_spi.c",
+        "<virtual_root>/W5500/dhcp.c"
+      ],
       "toolchain": "AC5",
       "compileConfig": {
         "cpuType": "Cortex-M4",

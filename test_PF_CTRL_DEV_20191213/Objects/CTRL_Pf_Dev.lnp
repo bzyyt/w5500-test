@@ -34,6 +34,7 @@
 ".\objects\w5500_conf.o"
 ".\objects\w5500_control.o"
 ".\objects\ctrlalgorithm.o"
+".\objects\tcp_server.o"
 --strict --scatter ".\Objects\CTRL_Pf_Dev.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

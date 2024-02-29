@@ -19,6 +19,15 @@
         "folders": []
       },
       {
+        "name": "Application",
+        "files": [
+          {
+            "path": "../test_PF_CTRL_DEV_20191213/Code/User/Application/tcp_server.c"
+          }
+        ],
+        "folders": []
+      },
+      {
         "name": "Common",
         "files": [],
         "folders": []

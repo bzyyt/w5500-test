@@ -34,7 +34,7 @@ uint8 rxbuf[1024];
 uint8 mac[6] = {0x00, 0x08, 0xdc, 0x11, 0x11, 0x11};
 
 /*定义默认IP信息*/
-uint8 local_ip[4] = {192, 168, 1, 232};     // 定义w5500默认IP地址
+uint8 local_ip[4] = {192, 168, 1, 150};     // 定义w5500默认IP地址
 uint8 subnet[4] = {255, 255, 255, 0};       // 定义w5500默认子网掩码
 uint8 gateway[4] = {192, 168, 1, 1};        // 定义w5500默认网关
 uint8 dns_server[4] = {114, 114, 114, 114}; // 定义w5500默认DNS
@@ -42,7 +42,7 @@ uint8 dns_server[4] = {114, 114, 114, 114}; // 定义w5500默认DNS
 uint16 local_port = 8080; // 定义本地端口
 
 /*定义远端IP信息*/
-uint8 remote_ip[4] = {192, 168, 1, 100}; // 远端IP地址
+uint8 remote_ip[4] = {192, 168, 1, 30}; // 远端IP地址
 uint16 remote_port = 8080;               // 远端端口号
 
 /*IP配置方法选择，请自行选择*/

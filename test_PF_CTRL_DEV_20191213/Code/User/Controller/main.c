@@ -109,6 +109,18 @@ void RecvINSMsg(void)
     g_stInsMsg.work_mode = g_ucRecvBuffUart1[22];
 }
 
+/**
+ * @brief UART中断服务函数，运行TCP服务
+ * @param 无
+ * @return 无
+*/
+void ISR_uart(void)
+{
+    do_tcp_server();
+}
+
+
+/*
 void ISR_uart(void)
 {
     u32 i,len;
@@ -167,3 +179,5 @@ void ISR_uart(void)
     }
     
 }
+
+*/

@@ -510,6 +510,11 @@
               <FileType>1</FileType>
               <FilePath>.\Code\Driver\Helper\GpioAdapter.c</FilePath>
             </File>
+            <File>
+              <FileName>SwoAdapter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Code\Driver\Helper\SwoAdapter.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

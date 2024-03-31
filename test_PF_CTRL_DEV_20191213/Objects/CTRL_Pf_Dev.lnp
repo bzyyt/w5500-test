@@ -23,6 +23,7 @@
 ".\objects\adcadapter.o"
 ".\objects\udpadapter.o"
 ".\objects\gpioadapter.o"
+".\objects\swoadapter.o"
 ".\objects\main.o"
 ".\objects\system_stm32f4xx.o"
 ".\objects\startup_stm32f429_439xx.o"

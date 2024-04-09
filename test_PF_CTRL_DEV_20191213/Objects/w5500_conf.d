@@ -46,3 +46,5 @@
 .\objects\w5500_conf.o: Code\Driver\Official\W5500\socket.h
 .\objects\w5500_conf.o: .\Code\Driver\Helper\SPIAdapter.h
 .\objects\w5500_conf.o: .\Code\Driver\Helper\DelayAdapter.h
+.\objects\w5500_conf.o: .\Code\Driver\Helper\UartAdapter.h
+.\objects\w5500_conf.o: C:\keil5arm\ARM\ARMCC\Bin\..\include\stdbool.h

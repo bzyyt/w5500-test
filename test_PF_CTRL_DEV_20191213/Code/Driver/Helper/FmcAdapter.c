@@ -132,7 +132,7 @@ void FMC_Init()
 	FMC_NORSRAMCmd(FMC_Bank1_NORSRAM1, ENABLE);
     
     /* Read FPGA version */
-    while(FMC_ReadWord(0x16<<3) != 0x107);
+    // while(FMC_ReadWord(0x16<<3) != 0x107);
 }
 
 void FMC_ReadBuffer(u32 addr, u16 *pBuffer, u32 size)

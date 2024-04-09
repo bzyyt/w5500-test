@@ -22,6 +22,7 @@
 #include "socket.h"
 #include "SPIAdapter.h"
 #include "DelayAdapter.h"
+#include "UartAdapter.h"
 
 CONFIG_MSG ConfigMsg, RecvMsg; // 配置结构体
 
@@ -60,16 +61,15 @@ void reset_break_gpio_init(void)
 {
   GPIO_InitTypeDef GPIO_InitStructure;
   RCC_APB1PeriphClockCmd(RCC_AHB1Periph_GPIOH, ENABLE); // 开启GPIOH时钟
-  // __HAL_RCC_GPIOH_CLK_ENABLE();
   /* PH_01 -> RST */
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-  // TODO: 可能需要一个pupd，咱也不懂
+  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN;
   GPIO_Init(GPIOH, &GPIO_InitStructure);
-  /* PH_05 -> INT */
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;
+  /* PH_02 -> INT */
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
   GPIO_Init(GPIOH, &GPIO_InitStructure);
 }
@@ -101,7 +101,8 @@ void set_w5500_netinfo(void)
   switch (ip_from)
   {
   case IP_FROM_DEFINE:
-    printf(" 使用定义的IP信息配置W5500：\r\n");
+    // printf(" 使用定义的IP信息配置W5500：\r\n");
+    SendUartMsg(FPGAUart1, 0, 16, "IP_FROM_DEFINE\r\n");
     break;
 #ifdef _HTTP_SERVER_H_
   case IP_FROM_FLASH:
@@ -115,11 +116,11 @@ void set_w5500_netinfo(void)
   setSIPR(ConfigMsg.lip);
 
   getSIPR(local_ip);
-  printf(" W5500 IP地址   : %d.%d.%d.%d\r\n", local_ip[0], local_ip[1], local_ip[2], local_ip[3]);
+  // printf(" W5500 IP地址   : %d.%d.%d.%d\r\n", local_ip[0], local_ip[1], local_ip[2], local_ip[3]);
   getSUBR(subnet);
-  printf(" W5500 子网掩码 : %d.%d.%d.%d\r\n", subnet[0], subnet[1], subnet[2], subnet[3]);
+  // printf(" W5500 子网掩码 : %d.%d.%d.%d\r\n", subnet[0], subnet[1], subnet[2], subnet[3]);
   getGAR(gateway);
-  printf(" W5500 网关     : %d.%d.%d.%d\r\n", gateway[0], gateway[1], gateway[2], gateway[3]);
+  // printf(" W5500 网关     : %d.%d.%d.%d\r\n", gateway[0], gateway[1], gateway[2], gateway[3]);
 }
 
 /**
@@ -136,7 +137,7 @@ void set_w5500_mac(void)
   memcpy(ConfigMsg.mac, mac, 6);
   setSHAR(ConfigMsg.mac);
   getSHAR(mac);
-  printf(" W5500 MAC地址  : %02x.%02x.%02x.%02x.%02x.%02x\r\n", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+  // printf(" W5500 MAC地址  : %02x.%02x.%02x.%02x.%02x.%02x\r\n", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
 }
 
 /**
@@ -232,7 +233,7 @@ uint16 wiz_write_buf(uint32 addrbsb, uint8 *buf, uint16 len)
 {
   uint16 idx = 0;
   if (len == 0)
-    printf(" Unexpected2 length 0\r\n");
+    // printf(" Unexpected2 length 0\r\n");
   iinchip_csoff();
   IINCHIP_SpiSendData((addrbsb & 0x00FF0000) >> 16);
   IINCHIP_SpiSendData((addrbsb & 0x0000FF00) >> 8);
@@ -257,7 +258,7 @@ uint16 wiz_read_buf(uint32 addrbsb, uint8 *buf, uint16 len)
   uint16 idx = 0;
   if (len == 0)
   {
-    printf(" Unexpected2 length 0\r\n");
+    // printf(" Unexpected2 length 0\r\n");
   }
   iinchip_csoff();
   IINCHIP_SpiSendData((addrbsb & 0x00FF0000) >> 16);
@@ -281,7 +282,7 @@ void reboot(void)
 {
   pFunction Jump_To_Application;
   uint32 JumpAddress;
-  printf(" 系统重启中……\r\n");
+  // printf(" 系统重启中……\r\n");
   JumpAddress = *(vu32 *)(0x00000004);
   Jump_To_Application = (pFunction)JumpAddress;
   Jump_To_Application();
@@ -298,7 +299,8 @@ void PHY_check(void)
   PHY_connect = 0x01 & getPHYStatus();
   if (PHY_connect == 0)
   {
-    printf(" \r\n 请检查网线是否连接?\r\n");
+    // printf(" \r\n 请检查网线是否连接?\r\n");
+    SendUartMsg(FPGAUart1, 0, 22, "cable not connected\r\n");
     PHY_connect = 0;
     do
     {
@@ -308,10 +310,10 @@ void PHY_check(void)
     while (PHY_connect == 0)
     {
       PHY_connect = 0x01 & getPHYStatus();
-      printf(" .");
+      // printf(" .");
       Delay_ms(500);
     }
-    printf(" \r\n");
+    // printf(" \r\n");
   }
 }
 

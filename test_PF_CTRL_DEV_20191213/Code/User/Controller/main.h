@@ -13,9 +13,10 @@
 #include "DACAdapter.h"
 #include "ExtiAdapter.h"
 #include "ADCAdapter.h"
-#include "UdpAdapter.h"
+// #include "UdpAdapter.h"
 #include "GpioAdapter.h"
 #include "SPIAdapter.h"
+#include "SwoAdapter.h"
 
 #include "ctrlAlgorithm.h"
 

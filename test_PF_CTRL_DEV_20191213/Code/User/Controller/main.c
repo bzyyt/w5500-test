@@ -44,7 +44,7 @@ int main(void)
     
     while(1)
     {
-        
+        // printf("Hello World!\n");
     }
 }
 
@@ -52,6 +52,8 @@ int main(void)
 void ISR_Main_Int()
 {   
     g_counter_main ++;
+
+    do_tcp_server();
     
    // ISR_uart(); // recv INS anginc & attitude 
     
@@ -75,7 +77,7 @@ void Peripheral_Init(void)
     // Initialize ADC
     Adc_Init();
     // Initialize UDP
-    Udp_Init();
+    // Udp_Init();
     // Initialize GPIO
     Gpio_Init();
     //Initialize FMC(FPGA)
@@ -109,18 +111,7 @@ void RecvINSMsg(void)
     g_stInsMsg.work_mode = g_ucRecvBuffUart1[22];
 }
 
-/**
- * @brief UART中断服务函数，运行TCP服务
- * @param 无
- * @return 无
-*/
-void ISR_uart(void)
-{
-    do_tcp_server();
-}
 
-
-/*
 void ISR_uart(void)
 {
     u32 i,len;
@@ -180,4 +171,4 @@ void ISR_uart(void)
     
 }
 
-*/
+

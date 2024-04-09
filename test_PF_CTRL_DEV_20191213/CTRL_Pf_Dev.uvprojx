@@ -191,7 +191,7 @@
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>0</useUlib>
+            <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -501,11 +501,6 @@
               <FilePath>.\Code\Driver\Helper\ADCAdapter.c</FilePath>
             </File>
             <File>
-              <FileName>UdpAdapter.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Code\Driver\Helper\UdpAdapter.c</FilePath>
-            </File>
-            <File>
               <FileName>GpioAdapter.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Code\Driver\Helper\GpioAdapter.c</FilePath>
@@ -561,16 +556,6 @@
         <Group>
           <GroupName>W5500</GroupName>
           <Files>
-            <File>
-              <FileName>w5500.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Code\Driver\Official\W5500\w5500.c</FilePath>
-            </File>
-            <File>
-              <FileName>wizchip_conf.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Code\Driver\Official\W5500\wizchip_conf.c</FilePath>
-            </File>
             <File>
               <FileName>socket.c</FileName>
               <FileType>1</FileType>

@@ -596,6 +596,11 @@
               <FileType>1</FileType>
               <FilePath>.\Code\User\Application\tcp_server.c</FilePath>
             </File>
+            <File>
+              <FileName>tcp_client.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Code\User\Application\tcp_client.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

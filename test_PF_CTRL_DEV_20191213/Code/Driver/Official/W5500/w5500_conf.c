@@ -43,6 +43,7 @@ uint8 dns_server[4] = {114, 114, 114, 114}; // 定义w5500默认DNS
 uint16 local_port = 8080; // 定义本地端口
 
 /*定义远端IP信息*/
+// uint8 remote_ip[4] = {169, 254, 253, 117}; // 远端IP地址
 uint8 remote_ip[4] = {192, 168, 1, 30}; // 远端IP地址
 uint16 remote_port = 8080;               // 远端端口号
 

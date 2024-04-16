@@ -55,5 +55,6 @@
 .\objects\main.o: C:\keil5arm\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: .\Code\User\Algorithm\ctrlAlgorithm.h
 .\objects\main.o: .\Code\User\Application\tcp_server.h
+.\objects\main.o: .\Code\User\Application\tcp_client.h
 .\objects\main.o: .\Code\Driver\Official\W5500\w5500_conf.h
 .\objects\main.o: .\Code\Driver\Official\W5500\types.h

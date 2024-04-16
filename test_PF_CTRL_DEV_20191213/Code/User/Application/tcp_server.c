@@ -25,7 +25,8 @@ uint8_t tcp_send_buff[DATA_BUF_SIZE] = "test";       // 定义发送数据缓冲区
 void do_tcp_server(void)
 {  
   uint16 len=0;  
-  switch(getSn_SR(SOCK_TCPS))                             // 获取socket的状态
+  uint8 status=getSn_SR(SOCK_TCPS);
+  switch(status)                             // 获取socket的状态
   {
     case SOCK_CLOSED:                                     // socket处于关闭状态
       socket(SOCK_TCPS ,Sn_MR_TCP,local_port,Sn_MR_ND);   // 打开socket

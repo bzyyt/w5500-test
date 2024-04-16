@@ -21,6 +21,7 @@
 #include "ctrlAlgorithm.h"
 
 #include "tcp_server.h"
+#include "tcp_client.h"
 #include "w5500_conf.h"
 
 #define MAIN_FREQUENCY 1000

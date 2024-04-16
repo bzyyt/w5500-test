@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\CTRL_Pf_Dev.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\CTRL_Pf_Dev.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Apr 09 15:14:33 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Apr 16 14:56:02 2024
 <BR><P>
 <H3>Maximum Stack Usage =        336 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -605,10 +605,6 @@ Global Symbols
 
 <P><STRONG><a name="[126]"></a>_ll_sshift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llsshr.o(.text), UNUSED)
 
-<P><STRONG><a name="[127]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
-
-<P><STRONG><a name="[128]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
-
 <P><STRONG><a name="[7c]"></a>ADC1_Config</STRONG> (Thumb, 122 bytes, Stack size 40 bytes, adcadapter.o(i.ADC1_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = ADC1_Config &rArr; GPIO_Init
 </UL>
@@ -1122,18 +1118,18 @@ Global Symbols
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iinchip_csoff
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_SpiSendData
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_SR
+<BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_SR
 <LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_RX_RSR1
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getPHYStatus
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_data_processing
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv_data_processing
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_TX_FSR1
-<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_IR
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;listen
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_IR
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connect
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 </UL>
 
@@ -1159,19 +1155,19 @@ Global Symbols
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket_buf_init
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_data_processing
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv_data_processing
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;listen
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connect
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 </UL>
 
 <P><STRONG><a name="[69]"></a>ISR_Main_Int</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, main.o(i.ISR_Main_Int))
-<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = ISR_Main_Int &rArr; do_tcp_server &rArr; send &rArr; send_data_processing &rArr; wiz_write_buf &rArr; IINCHIP_SpiSendData &rArr; Spi_ReadWriteData &rArr; Spi_ReadWrite
+<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = ISR_Main_Int &rArr; do_tcp_client &rArr; send &rArr; send_data_processing &rArr; wiz_write_buf &rArr; IINCHIP_SpiSendData &rArr; Spi_ReadWriteData &rArr; Spi_ReadWrite
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_Blink
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_server
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_client
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
 </UL>
@@ -1706,25 +1702,25 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[129]"></a>__1printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)
+<P><STRONG><a name="[127]"></a>__1printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)
 
 <P><STRONG><a name="[109]"></a>__2printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_data_processing
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv_data_processing
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
 </UL>
 
-<P><STRONG><a name="[12a]"></a>__c89printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)
+<P><STRONG><a name="[128]"></a>__c89printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)
 
-<P><STRONG><a name="[12b]"></a>printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)
+<P><STRONG><a name="[129]"></a>printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)
 
-<P><STRONG><a name="[12c]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[12a]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[12d]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[12b]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[12e]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[12c]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
 <P><STRONG><a name="[c1]"></a>close</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, socket.o(i.close))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = close &rArr; IINCHIP_WRITE &rArr; IINCHIP_SpiSendData &rArr; Spi_ReadWriteData &rArr; Spi_ReadWrite
@@ -1733,32 +1729,42 @@ Global Symbols
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_READ
 </UL>
 <BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PHY_check
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_server
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_client
 </UL>
 
-<P><STRONG><a name="[f8]"></a>disconnect</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, socket.o(i.disconnect))
+<P><STRONG><a name="[f8]"></a>connect</STRONG> (Thumb, 248 bytes, Stack size 24 bytes, socket.o(i.connect))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = connect &rArr; getSn_IR &rArr; IINCHIP_READ &rArr; IINCHIP_SpiSendData &rArr; Spi_ReadWriteData &rArr; Spi_ReadWrite
+</UL>
+<BR>[Calls]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_IR
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_WRITE
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_READ
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_client
+</UL>
+
+<P><STRONG><a name="[fa]"></a>disconnect</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, socket.o(i.disconnect))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = disconnect &rArr; IINCHIP_WRITE &rArr; IINCHIP_SpiSendData &rArr; Spi_ReadWriteData &rArr; Spi_ReadWrite
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_WRITE
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_READ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_server
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_client
 </UL>
 
-<P><STRONG><a name="[ba]"></a>do_tcp_server</STRONG> (Thumb, 128 bytes, Stack size 8 bytes, tcp_server.o(i.do_tcp_server))
-<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = do_tcp_server &rArr; send &rArr; send_data_processing &rArr; wiz_write_buf &rArr; IINCHIP_SpiSendData &rArr; Spi_ReadWriteData &rArr; Spi_ReadWrite
+<P><STRONG><a name="[ba]"></a>do_tcp_client</STRONG> (Thumb, 132 bytes, Stack size 8 bytes, tcp_client.o(i.do_tcp_client))
+<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = do_tcp_client &rArr; send &rArr; send_data_processing &rArr; wiz_write_buf &rArr; IINCHIP_SpiSendData &rArr; Spi_ReadWriteData &rArr; Spi_ReadWrite
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setSn_IR
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_SR
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_SR
 <LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_RX_RSR1
-<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_IR
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;listen
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_IR
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connect
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 </UL>
 <BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ISR_Main_Int
@@ -1778,7 +1784,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[10c]"></a>getIINCHIP_TxMAX</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, w5500_control.o(i.getIINCHIP_TxMAX))
-<BR><BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
+<BR><BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
 </UL>
 
 <P><STRONG><a name="[bf]"></a>getPHYStatus</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, w5500_conf.o(i.getPHYStatus))
@@ -1813,12 +1819,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_w5500_netinfo
 </UL>
 
-<P><STRONG><a name="[fc]"></a>getSn_IR</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, w5500_control.o(i.getSn_IR))
+<P><STRONG><a name="[f9]"></a>getSn_IR</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, w5500_control.o(i.getSn_IR))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = getSn_IR &rArr; IINCHIP_READ &rArr; IINCHIP_SpiSendData &rArr; Spi_ReadWriteData &rArr; Spi_ReadWrite
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_READ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_server
+<BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connect
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_client
 </UL>
 
 <P><STRONG><a name="[fe]"></a>getSn_RX_RSR1</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, w5500_control.o(i.getSn_RX_RSR1))
@@ -1826,15 +1833,15 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_READ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_server
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_client
 </UL>
 
-<P><STRONG><a name="[f9]"></a>getSn_SR</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, w5500_control.o(i.getSn_SR))
+<P><STRONG><a name="[fb]"></a>getSn_SR</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, w5500_control.o(i.getSn_SR))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = getSn_SR &rArr; IINCHIP_READ &rArr; IINCHIP_SpiSendData &rArr; Spi_ReadWriteData &rArr; Spi_ReadWrite
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_READ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_server
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_client
 </UL>
 
 <P><STRONG><a name="[106]"></a>getSn_TX_FSR1</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, w5500_control.o(i.getSn_TX_FSR1))
@@ -1842,7 +1849,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_READ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
 </UL>
 
 <P><STRONG><a name="[b5]"></a>iinchip_csoff</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, w5500_conf.o(i.iinchip_csoff))
@@ -1867,15 +1874,6 @@ Global Symbols
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_READ
 </UL>
 
-<P><STRONG><a name="[fb]"></a>listen</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, socket.o(i.listen))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = listen &rArr; IINCHIP_WRITE &rArr; IINCHIP_SpiSendData &rArr; Spi_ReadWriteData &rArr; Spi_ReadWrite
-</UL>
-<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_WRITE
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_READ
-</UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_server
-</UL>
-
 <P><STRONG><a name="[65]"></a>main</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 336<LI>Call Chain = main &rArr; Peripheral_Init &rArr; Can_Init &rArr; Can_Config_Setup &rArr; NVIC_Init
 </UL>
@@ -1887,14 +1885,14 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[100]"></a>recv</STRONG> (Thumb, 66 bytes, Stack size 24 bytes, socket.o(i.recv))
+<P><STRONG><a name="[ff]"></a>recv</STRONG> (Thumb, 66 bytes, Stack size 24 bytes, socket.o(i.recv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = recv &rArr; recv_data_processing &rArr; wiz_read_buf &rArr; IINCHIP_SpiSendData &rArr; Spi_ReadWriteData &rArr; Spi_ReadWrite
 </UL>
 <BR>[Calls]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv_data_processing
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_WRITE
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_READ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_server
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_client
 </UL>
 
 <P><STRONG><a name="[108]"></a>recv_data_processing</STRONG> (Thumb, 116 bytes, Stack size 24 bytes, w5500_control.o(i.recv_data_processing))
@@ -1905,7 +1903,7 @@ Global Symbols
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_READ
 <LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
+<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
 </UL>
 
 <P><STRONG><a name="[10a]"></a>reset_w5500</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, w5500_conf.o(i.reset_w5500))
@@ -1918,7 +1916,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;w5500Init
 </UL>
 
-<P><STRONG><a name="[ff]"></a>send</STRONG> (Thumb, 216 bytes, Stack size 32 bytes, socket.o(i.send))
+<P><STRONG><a name="[100]"></a>send</STRONG> (Thumb, 216 bytes, Stack size 32 bytes, socket.o(i.send))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = send &rArr; send_data_processing &rArr; wiz_write_buf &rArr; IINCHIP_SpiSendData &rArr; Spi_ReadWriteData &rArr; Spi_ReadWrite
 </UL>
 <BR>[Calls]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_data_processing
@@ -1929,7 +1927,7 @@ Global Symbols
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 <LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_server
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_client
 </UL>
 
 <P><STRONG><a name="[10d]"></a>send_data_processing</STRONG> (Thumb, 116 bytes, Stack size 24 bytes, w5500_control.o(i.send_data_processing))
@@ -1940,7 +1938,7 @@ Global Symbols
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_READ
 <LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
 </UL>
 
 <P><STRONG><a name="[10f]"></a>setGAR</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, w5500_control.o(i.setGAR))
@@ -1980,7 +1978,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_WRITE
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_server
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_client
 </UL>
 
 <P><STRONG><a name="[113]"></a>set_w5500_mac</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, w5500_conf.o(i.set_w5500_mac))
@@ -2006,14 +2004,14 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;w5500Init
 </UL>
 
-<P><STRONG><a name="[fa]"></a>socket</STRONG> (Thumb, 192 bytes, Stack size 24 bytes, socket.o(i.socket))
+<P><STRONG><a name="[fc]"></a>socket</STRONG> (Thumb, 192 bytes, Stack size 24 bytes, socket.o(i.socket))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = socket &rArr; close &rArr; IINCHIP_WRITE &rArr; IINCHIP_SpiSendData &rArr; Spi_ReadWriteData &rArr; Spi_ReadWrite
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_WRITE
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IINCHIP_READ
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_server
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_tcp_client
 </UL>
 
 <P><STRONG><a name="[115]"></a>socket_buf_init</STRONG> (Thumb, 128 bytes, Stack size 24 bytes, w5500_control.o(i.socket_buf_init))

@@ -233,7 +233,7 @@ uint8 IINCHIP_READ(uint32 addrbsb)
 uint16 wiz_write_buf(uint32 addrbsb, uint8 *buf, uint16 len)
 {
   uint16 idx = 0;
-  if (len == 0)
+  // if (len == 0)
     // printf(" Unexpected2 length 0\r\n");
   iinchip_csoff();
   IINCHIP_SpiSendData((addrbsb & 0x00FF0000) >> 16);
@@ -257,10 +257,10 @@ uint16 wiz_write_buf(uint32 addrbsb, uint8 *buf, uint16 len)
 uint16 wiz_read_buf(uint32 addrbsb, uint8 *buf, uint16 len)
 {
   uint16 idx = 0;
-  if (len == 0)
-  {
-    // printf(" Unexpected2 length 0\r\n");
-  }
+  // if (len == 0)
+  // {
+  //   printf(" Unexpected2 length 0\r\n");
+  // }
   iinchip_csoff();
   IINCHIP_SpiSendData((addrbsb & 0x00FF0000) >> 16);
   IINCHIP_SpiSendData((addrbsb & 0x0000FF00) >> 8);

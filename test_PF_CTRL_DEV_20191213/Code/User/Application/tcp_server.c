@@ -21,6 +21,7 @@
 
 uint8_t tcp_server_buff[DATA_BUF_SIZE];  
 uint8_t tcp_send_buff[DATA_BUF_SIZE] = "test";       // 定义发送数据缓冲区
+uint8 times = 0;
 
 void do_tcp_server(void)
 {  
@@ -42,14 +43,18 @@ void do_tcp_server(void)
       {
         setSn_IR(SOCK_TCPS, Sn_IR_CON);                   // 清除接收中断标志位
       }
+      times++;
+      if(times == 100)
+      {
+        send(SOCK_TCPS,tcp_send_buff,4);                         // 向Client发送数据
+        times = 0;
+      }
       len=getSn_RX_RSR1(SOCK_TCPS);                        // 定义len为已接收数据的长度
-      send(SOCK_TCPS,tcp_send_buff,4);                         // 向Client发送数据
       if(len>0)
       {
         recv(SOCK_TCPS,tcp_server_buff,len);                         // 接收来自Client的数据
         tcp_server_buff[len]=0x00;                                   // 添加字符串结束符
         // printf("%s\r\n",tcp_server_buff);
-        
       }
       break;
     

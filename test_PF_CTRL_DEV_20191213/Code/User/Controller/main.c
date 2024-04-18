@@ -53,8 +53,8 @@ void ISR_Main_Int()
 {   
     g_counter_main ++;
 
-    // do_tcp_server();
-    do_tcp_client();
+    do_tcp_server();
+    // do_tcp_client();
     
    // ISR_uart(); // recv INS anginc & attitude 
     

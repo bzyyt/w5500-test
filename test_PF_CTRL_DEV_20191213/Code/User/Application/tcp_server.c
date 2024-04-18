@@ -20,8 +20,9 @@
 #include "w5500_conf.h"
 
 uint8_t tcp_server_buff[DATA_BUF_SIZE];  
-uint8_t tcp_send_buff[DATA_BUF_SIZE] = "test";       // 定义发送数据缓冲区
+uint8_t tcp_send_buff[DATA_BUF_SIZE] = "00000";       // 定义发送数据缓冲区
 uint8 times = 0;
+uint16 number = 0;
 
 void do_tcp_server(void)
 {  
@@ -46,7 +47,8 @@ void do_tcp_server(void)
       times++;
       if(times == 100)
       {
-        send(SOCK_TCPS,tcp_send_buff,4);                         // 向Client发送数据
+        sprintf(tcp_send_buff,"%5ld",number++);
+        send(SOCK_TCPS,tcp_send_buff,5);                         // 向Client发送数据
         times = 0;
       }
       len=getSn_RX_RSR1(SOCK_TCPS);                        // 定义len为已接收数据的长度

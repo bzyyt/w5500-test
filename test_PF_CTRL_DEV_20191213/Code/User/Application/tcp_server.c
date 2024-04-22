@@ -57,6 +57,7 @@ void do_tcp_server(void)
         recv(SOCK_TCPS,tcp_server_buff,len);                         // 接收来自Client的数据
         tcp_server_buff[len]=0x00;                                   // 添加字符串结束符
         // printf("%s\r\n",tcp_server_buff);
+        send(SOCK_TCPS,tcp_server_buff,len);
       }
       break;
     
